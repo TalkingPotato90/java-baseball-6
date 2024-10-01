@@ -1,10 +1,29 @@
 package baseball.model;
 
+import java.util.List;
+
 public class InputValidation {
 
-    public void validationPlayerInputNumberLength(String playerNumber) {
-        if (playerNumber.length() != 3) {
+    public void validatePlayerInputNumberLength(List<Integer> playerNumber) {
+
+        if (playerNumber.size() != 3) {
             throw new IllegalArgumentException("길이 오류");
+        }
+    }
+
+    public void validatePlayerInputNumberDuplication(List<Integer> playerNumber) {
+        List<Integer> distinctList = playerNumber.stream()
+                .distinct()
+                .toList();
+
+        if (distinctList.size() != 3) {
+            throw new IllegalArgumentException("숫자 중복");
+        }
+    }
+
+    public void validatePlayerInputNumberFormat(List<Integer> playerNumber) {
+        if (!playerNumber.stream().allMatch(integer -> integer >= 1 && integer <= 9)) {
+            throw new IllegalArgumentException("1-9사이의 숫자만 입력 가능");
         }
     }
 }
