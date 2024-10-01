@@ -10,7 +10,12 @@ public class Application {
         ExceptionController exceptionController = new ExceptionController();
 
         gameController.startControl();
-        exceptionController.inputControl();
+
+        try {
+            exceptionController.inputControl();
+        }catch (Exception e){
+            System.out.println("[ERROR] 입력 오류로 게임을 종료합니다.");
+        }
 
     }
 }
