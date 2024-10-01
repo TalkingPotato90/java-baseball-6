@@ -24,7 +24,7 @@ public class ExceptionController {
             }else if(e.getMessage().contains("1-9")){
                 System.out.println("[ERROR] 잘못된 형식의 입력으로 어플리케이션을 종료합니다.");
             }else{
-                e.printStackTrace();
+                System.out.println("[ERROR] 잘못된 입력으로 어플리케이션을 종료합니다.");
             }
         }
 

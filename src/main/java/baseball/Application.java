@@ -17,5 +17,7 @@ public class Application {
             System.out.println("[ERROR] 입력 오류로 게임을 종료합니다.");
         }
 
+
+
     }
 }
