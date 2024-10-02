@@ -28,7 +28,7 @@ public class Game {
             return "3스트라이크";
         }
 
-        return "실패";
+        return "2스트라이크";
     }
 
 
