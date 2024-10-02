@@ -37,7 +37,10 @@ class GameTest {
 
                 Arguments.of(List.of(1, 2, 3), List.of(3, 1, 2), "3볼"),
                 Arguments.of(List.of(1, 7, 4), List.of(7, 5, 1), "2볼"),
-                Arguments.of(List.of(3, 7, 1), List.of(6, 1, 9), "1볼")
+                Arguments.of(List.of(3, 7, 1), List.of(6, 1, 9), "1볼"),
+
+                Arguments.of(List.of(1, 2, 3), List.of(1, 3, 9), "1볼 1스트라이크"),
+                Arguments.of(List.of(3, 9, 1), List.of(9, 3, 1), "2볼 1스트라이크")
         );
     }
 
