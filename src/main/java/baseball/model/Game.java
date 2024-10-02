@@ -16,8 +16,6 @@ public class Game {
             }
         }
 
-        System.out.println(computer);
-
         return computer;
     }
 
@@ -37,18 +35,13 @@ public class Game {
 
         if(strikeCount != 0 && ballCount != 0){
             result = ballCount+"볼 " + strikeCount + "스트라이크";
-        }
-
-        if (strikeCount >= 1) {
+        }else if (strikeCount >= 1 ) {
             result = strikeCount + "스트라이크";
-        }
-
-        if (ballCount >= 1) {
+        }else if (ballCount >= 1) {
             result = ballCount + "볼";
         }
 
         return result;
     }
-
 
 }
