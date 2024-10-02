@@ -19,5 +19,9 @@ public class Game {
         return computer;
     }
 
+    public String compareNumber(){
+        return "3스트라이크";
+    }
+
 
 }
