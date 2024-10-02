@@ -1,11 +1,14 @@
 package baseball.model;
 
+import baseball.controller.ExceptionController;
 import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Game {
+    private ExceptionController exceptionController = new ExceptionController();
+
     public List<Integer> pickRandomNumber() {
         List<Integer> computer = new ArrayList<>();
 
@@ -19,8 +22,13 @@ public class Game {
         return computer;
     }
 
-    public String compareNumber(){
-        return "3스트라이크";
+    public String compareNumber(List<Integer> computer, List<Integer> player){
+
+        if (computer.equals(player)) {
+            return "3스트라이크";
+        }
+
+        return "실패";
     }
 
 
