@@ -34,6 +34,10 @@ public class Game {
             }
         }
 
+        if(strikeCount != 0 && ballCount != 0){
+            return ballCount+"볼 " + strikeCount + "스트라이크";
+        }
+
         if (strikeCount >= 1) {
             return strikeCount + "스트라이크";
         }
@@ -42,7 +46,7 @@ public class Game {
             return ballCount + "볼";
         }
 
-        return "노스트라이크";
+        return "낫싱";
     }
 
 

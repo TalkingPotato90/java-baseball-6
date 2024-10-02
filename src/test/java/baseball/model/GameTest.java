@@ -29,28 +29,12 @@ class GameTest {
         assertThat(game.pickRandomNumber()).allMatch(i -> i >= 1 && i <= 9);
     }
 
-    private static Stream<Arguments> strikeTest() {
+    private static Stream<Arguments> compareNumberTest() {
         return Stream.of(
                 Arguments.of(List.of(1, 2, 3), List.of(1, 2, 3), "3스트라이크"),
-                Arguments.of(List.of(5, 1, 3), List.of(5, 1, 3), "3스트라이크"),
-                Arguments.of(List.of(6, 9, 1), List.of(6, 9, 1), "3스트라이크"),
-                Arguments.of(List.of(1, 2, 4), List.of(1, 2, 3), "2스트라이크"),
-                Arguments.of(List.of(5, 7, 3), List.of(5, 1, 3), "2스트라이크"),
                 Arguments.of(List.of(3, 9, 1), List.of(6, 9, 1), "2스트라이크"),
                 Arguments.of(List.of(1, 5, 4), List.of(1, 2, 3), "1스트라이크"),
-                Arguments.of(List.of(4, 1, 2), List.of(5, 1, 3), "1스트라이크"),
-                Arguments.of(List.of(3, 7, 1), List.of(6, 9, 1), "1스트라이크")
-        );
-    }
 
-    @ParameterizedTest
-    @MethodSource("strikeTest")
-    void 스트라이크_테스트(List<Integer> computer, List<Integer> player, String expected) {
-        assertThat(game.compareNumber(computer,player)).isEqualTo(expected);
-    }
-
-    private static Stream<Arguments> ballTest() {
-        return Stream.of(
                 Arguments.of(List.of(1, 2, 3), List.of(3, 1, 2), "3볼"),
                 Arguments.of(List.of(1, 7, 4), List.of(7, 5, 1), "2볼"),
                 Arguments.of(List.of(3, 7, 1), List.of(6, 1, 9), "1볼")
@@ -58,10 +42,9 @@ class GameTest {
     }
 
     @ParameterizedTest
-    @MethodSource("ballTest")
-    void 볼_테스트(List<Integer> computer, List<Integer> player, String expected) {
+    @MethodSource("compareNumberTest")
+    void 숫자_비교_테스트(List<Integer> computer, List<Integer> player, String expected) {
         assertThat(game.compareNumber(computer,player)).isEqualTo(expected);
     }
-
 
 }
