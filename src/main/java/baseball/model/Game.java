@@ -23,16 +23,23 @@ public class Game {
     }
 
     public String compareNumber(List<Integer> computer, List<Integer> player){
-        int count = 0;
+        int strikeCount = 0;
+        int ballCount = 0;
 
         for (int i = 0; i < computer.size(); i++) {
             if (computer.get(i).equals(player.get(i))) {
-                count++;
+                strikeCount++;
+            }else if (computer.contains(player.get(i))) {
+                ballCount++;
             }
         }
 
-        if (count >= 1) {
-            return count + "스트라이크";
+        if (strikeCount >= 1) {
+            return strikeCount + "스트라이크";
+        }
+
+        if (ballCount >= 1) {
+            return ballCount + "볼";
         }
 
         return "노스트라이크";
