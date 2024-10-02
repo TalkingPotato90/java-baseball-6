@@ -43,4 +43,18 @@ class GameTest {
         assertThat(game.compareNumber(computer,player)).isEqualTo("3스트라이크");
     }
 
+    private static Stream<Arguments> twoStrikeTest() {
+        return Stream.of(
+                Arguments.of(List.of(1, 2, 4), List.of(1, 2, 3)),
+                Arguments.of(List.of(5, 7, 3), List.of(5, 1, 3)),
+                Arguments.of(List.of(3, 9, 1), List.of(6, 9, 1))
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("twoStrikeTest")
+    void 이_스트라이크_테스트(List<Integer> computer, List<Integer> player) {
+        assertThat(game.compareNumber(computer,player)).isEqualTo("2스트라이크");
+    }
+
 }
