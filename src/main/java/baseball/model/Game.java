@@ -23,12 +23,19 @@ public class Game {
     }
 
     public String compareNumber(List<Integer> computer, List<Integer> player){
+        int count = 0;
 
-        if (computer.equals(player)) {
-            return "3스트라이크";
+        for (int i = 0; i < computer.size(); i++) {
+            if (computer.get(i).equals(player.get(i))) {
+                count++;
+            }
         }
 
-        return "2스트라이크";
+        if (count >= 1) {
+            return count + "스트라이크";
+        }
+
+        return "노스트라이크";
     }
 
 
