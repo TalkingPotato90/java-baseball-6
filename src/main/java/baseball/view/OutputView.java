@@ -6,4 +6,9 @@ public class OutputView {
         System.out.println(start);
     }
 
+    public void printRequireInput(){
+        String message = "숫자를 입력해주세요 : ";
+        System.out.print(message);
+    }
+
 }

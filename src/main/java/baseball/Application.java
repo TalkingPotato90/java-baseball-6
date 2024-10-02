@@ -10,6 +10,7 @@ public class Application {
         ExceptionController exceptionController = new ExceptionController();
 
         gameController.startControl();
+        gameController.printRequireInputControl();
         exceptionController.inputControl();
 
     }

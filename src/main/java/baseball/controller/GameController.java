@@ -3,10 +3,14 @@ package baseball.controller;
 import baseball.view.OutputView;
 
 public class GameController {
-    public void startControl(){
-        OutputView outputView = new OutputView();
+    private OutputView outputView = new OutputView();
 
+    public void startControl(){
         outputView.printStart();
+    }
+
+    public void printRequireInputControl(){
+        outputView.printRequireInput();
     }
 
 }
