@@ -18,4 +18,8 @@ public class InputView {
 
         return playerNumbers;
     }
+
+    public int inputReplay() {
+        return Integer.parseInt(Console.readLine());
+    }
 }

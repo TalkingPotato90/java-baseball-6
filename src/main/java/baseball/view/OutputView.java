@@ -10,4 +10,12 @@ public class OutputView {
         String message = "숫자를 입력해주세요 : ";
         System.out.print(message);
     }
+
+    public void printEnd(){
+        String end = "3개의 숫자를 모두 맞히셨습니다! 게임종료";
+        String replay = "게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.";
+
+        System.out.println(end);
+        System.out.println(replay);
+    }
 }

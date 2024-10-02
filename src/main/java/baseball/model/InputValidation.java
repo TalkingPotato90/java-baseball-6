@@ -26,4 +26,10 @@ public class InputValidation {
             throw new IllegalArgumentException("1-9사이의 숫자만 입력 가능");
         }
     }
+
+    public void validateReplayGame(int input){
+        if(input != 1 && input != 2){
+            throw new IllegalArgumentException("1이나 2만 입력가능");
+        }
+    }
 }

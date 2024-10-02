@@ -2,8 +2,10 @@ package baseball.model;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.List;
 import java.util.stream.Stream;
@@ -63,6 +65,13 @@ class InputValidationTest {
     @MethodSource("testFormatStream")
     void 플레이어_입력_숫자_유효성_겁증(List<Integer> sample) {
         assertThatThrownBy(() -> inputValidation.validatePlayerInputNumberFormat(sample))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = {0,3,10})
+    void 게임_재시작_입력_유효성_검증(int inputNumber){
+        assertThatThrownBy(()->inputValidation.validateReplayGame(inputNumber))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 
