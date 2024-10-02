@@ -23,4 +23,9 @@ class GameTest {
         assertThat(game.pickRandomNumber()).allMatch(i -> i >= 1 && i <= 9);
     }
 
+    @Test
+    void 삼_스트라이크_테스트(){
+        assertThat(game.compareNumber()).isEqualTo("3스트라이크");
+    }
+
 }
