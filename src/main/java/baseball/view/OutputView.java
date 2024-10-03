@@ -20,4 +20,8 @@ public class OutputView {
         System.out.println(endGame);
         System.out.println(replay);
     }
+
+    public void printGameResult(String result){
+        System.out.println(result);
+    }
 }
