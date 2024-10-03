@@ -1,6 +1,7 @@
 package baseball.model;
 
 import baseball.util.Message;
+import baseball.util.Value;
 import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.ArrayList;
@@ -10,8 +11,8 @@ public class Game {
     public List<Integer> pickRandomNumber() {
         List<Integer> computer = new ArrayList<>();
 
-        while (computer.size() < 3) {
-            int randomNumber = Randoms.pickNumberInRange(1, 9);
+        while (computer.size() < Value.CORRECT_SIZE.getValue()) {
+            int randomNumber = Randoms.pickNumberInRange(Value.MIN_NUMBER.getValue(), Value.MAX_NUMBER.getValue());
             if (!computer.contains(randomNumber)) {
                 computer.add(randomNumber);
             }
@@ -21,8 +22,8 @@ public class Game {
     }
 
     public int[] calculateCount(List<Integer> computer, List<Integer> player) {
-        int strikeCount = 0;
-        int ballCount = 0;
+        int strikeCount = Value.DEFAULT.getValue();
+        int ballCount = Value.DEFAULT.getValue();
 
         int[] counts = new int[2];
 
@@ -46,11 +47,11 @@ public class Game {
 
         String result = Message.NOTHING.getMent();
 
-        if (strikeCount != 0 && ballCount != 0) {
+        if (strikeCount != Value.DEFAULT.getValue() && ballCount != Value.DEFAULT.getValue()) {
             result = ballCount + Message.BALL.getMent() + " " + strikeCount + Message.STRIKE.getMent();
-        } else if (strikeCount >= 1) {
+        } else if (strikeCount >= Value.MIN_NUMBER.getValue()) {
             result = strikeCount + Message.STRIKE.getMent();
-        } else if (ballCount >= 1) {
+        } else if (ballCount >= Value.MIN_NUMBER.getValue()) {
             result = ballCount + Message.BALL.getMent();
         }
 
