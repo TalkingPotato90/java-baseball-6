@@ -11,11 +11,11 @@ public class GameController {
     private ExceptionController exceptionController = new ExceptionController();
 
     public void startControl() {
-        outputView.printStart();
+        outputView.printMessage("숫자 야구 게임을 시작합니다.");
     }
 
     public void printRequireInputControl() {
-        outputView.printRequireInput();
+        outputView.printMessage("숫자를 입력해주세요 : ");
     }
 
     public void compare() {
@@ -23,7 +23,7 @@ public class GameController {
         String result = "";
         while (!result.equals("3스트라이크")) {
             result = game.compareResult(game.calculateCount(computer, exceptionController.inputGameNumberControl()));
-            outputView.printGameResult(result);
+            outputView.printMessage(result);
         }
     }
 
