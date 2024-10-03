@@ -47,7 +47,7 @@ class GameTest {
     @ParameterizedTest
     @MethodSource("compareNumberTest")
     void 숫자_비교_테스트(List<Integer> computer, List<Integer> player, String expected) {
-        assertThat(game.compareNumber(computer, player)).isEqualTo(expected);
+        assertThat(game.compareResult(game.calculateCount(computer,player))).isEqualTo(expected);
     }
 
 }

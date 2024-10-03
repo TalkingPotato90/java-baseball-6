@@ -22,7 +22,7 @@ public class GameController {
         List<Integer> computer = game.pickRandomNumber();
         String result = "";
         while (!result.equals("3스트라이크")) {
-            result = game.compareNumber(computer, exceptionController.inputGameNumberControl());
+            result = game.compareResult(game.calculateCount(computer, exceptionController.inputGameNumberControl()));
             System.out.println(result);
         }
     }
