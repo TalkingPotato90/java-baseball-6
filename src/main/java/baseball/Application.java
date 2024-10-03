@@ -2,6 +2,7 @@ package baseball;
 
 import baseball.controller.ExceptionController;
 import baseball.controller.GameController;
+import baseball.util.Value;
 
 public class Application {
     public static void main(String[] args) {
@@ -9,11 +10,11 @@ public class Application {
         GameController gameController = new GameController();
         ExceptionController exceptionController = new ExceptionController();
 
-        int replay = 0;
+        int replay = Value.DEFAULT.getValue();
 
         gameController.startControl();
 
-        while (replay != 2) {
+        while (replay != Value.EXIT_GAME.getValue()) {
             gameController.printRequireInputControl();
             gameController.compare();
             gameController.endGame();
