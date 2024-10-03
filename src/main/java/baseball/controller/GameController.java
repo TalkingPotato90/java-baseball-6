@@ -1,6 +1,7 @@
 package baseball.controller;
 
 import baseball.model.Game;
+import baseball.util.Message;
 import baseball.view.OutputView;
 
 import java.util.List;
@@ -11,17 +12,17 @@ public class GameController {
     private ExceptionController exceptionController = new ExceptionController();
 
     public void startControl() {
-        outputView.printMessage("숫자 야구 게임을 시작합니다.");
+        outputView.printMessage(Message.START.getMent());
     }
 
     public void printRequireInputControl() {
-        outputView.printMessage("숫자를 입력해주세요 : ");
+        outputView.printMessage(Message.INPUT_NUMBER.getMent());
     }
 
     public void compare() {
         List<Integer> computer = game.pickRandomNumber();
         String result = "";
-        while (!result.equals("3스트라이크")) {
+        while (!result.equals(Message.END_POINT.getMent())) {
             result = game.compareResult(game.calculateCount(computer, exceptionController.inputGameNumberControl()));
             outputView.printMessage(result);
         }

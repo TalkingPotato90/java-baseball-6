@@ -1,5 +1,6 @@
 package baseball.model;
 
+import baseball.util.Message;
 import camp.nextstep.edu.missionutils.Randoms;
 
 import java.util.ArrayList;
@@ -43,14 +44,14 @@ public class Game {
         int strikeCount = counts[0];
         int ballCount = counts[1];
 
-        String result = "낫싱";
+        String result = Message.NOTHING.getMent();
 
         if (strikeCount != 0 && ballCount != 0) {
-            result = ballCount + "볼 " + strikeCount + "스트라이크";
+            result = ballCount + Message.BALL.getMent() + " " + strikeCount + Message.STRIKE.getMent();
         } else if (strikeCount >= 1) {
-            result = strikeCount + "스트라이크";
+            result = strikeCount + Message.STRIKE.getMent();
         } else if (ballCount >= 1) {
-            result = ballCount + "볼";
+            result = ballCount + Message.BALL.getMent();
         }
 
         return result;
