@@ -10,15 +10,15 @@ public class GameController {
     private Game game = new Game();
     private ExceptionController exceptionController = new ExceptionController();
 
-    public void startControl(){
+    public void startControl() {
         outputView.printStart();
     }
 
-    public void printRequireInputControl(){
+    public void printRequireInputControl() {
         outputView.printRequireInput();
     }
 
-    public void compare(){
+    public void compare() {
         List<Integer> computer = game.pickRandomNumber();
         String result = "";
         while (!result.equals("3스트라이크")) {
@@ -27,7 +27,7 @@ public class GameController {
         }
     }
 
-    public void endGame(){
+    public void endGame() {
         outputView.printEnd();
     }
 

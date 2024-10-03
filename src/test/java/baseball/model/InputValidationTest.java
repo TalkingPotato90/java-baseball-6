@@ -2,7 +2,6 @@ package baseball.model;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -69,9 +68,9 @@ class InputValidationTest {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {0,3,10})
-    void 게임_재시작_입력_유효성_검증(int inputNumber){
-        assertThatThrownBy(()->inputValidation.validateReplayGame(inputNumber))
+    @ValueSource(ints = {0, 3, 10})
+    void 게임_재시작_입력_유효성_검증(int inputNumber) {
+        assertThatThrownBy(() -> inputValidation.validateReplayGame(inputNumber))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 

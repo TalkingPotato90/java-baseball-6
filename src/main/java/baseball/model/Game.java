@@ -19,7 +19,7 @@ public class Game {
         return computer;
     }
 
-    public String compareNumber(List<Integer> computer, List<Integer> player){
+    public String compareNumber(List<Integer> computer, List<Integer> player) {
         int strikeCount = 0;
         int ballCount = 0;
 
@@ -28,16 +28,16 @@ public class Game {
         for (int i = 0; i < computer.size(); i++) {
             if (computer.get(i).equals(player.get(i))) {
                 strikeCount++;
-            }else if (computer.contains(player.get(i))) {
+            } else if (computer.contains(player.get(i))) {
                 ballCount++;
             }
         }
 
-        if(strikeCount != 0 && ballCount != 0){
-            result = ballCount+"볼 " + strikeCount + "스트라이크";
-        }else if (strikeCount >= 1 ) {
+        if (strikeCount != 0 && ballCount != 0) {
+            result = ballCount + "볼 " + strikeCount + "스트라이크";
+        } else if (strikeCount >= 1) {
             result = strikeCount + "스트라이크";
-        }else if (ballCount >= 1) {
+        } else if (ballCount >= 1) {
             result = ballCount + "볼";
         }
 

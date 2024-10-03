@@ -27,8 +27,8 @@ public class InputValidation {
         }
     }
 
-    public void validateReplayGame(int input){
-        if(input != 1 && input != 2){
+    public void validateReplayGame(int input) {
+        if (input != 1 && input != 2) {
             throw new IllegalArgumentException("1이나 2만 입력가능");
         }
     }
